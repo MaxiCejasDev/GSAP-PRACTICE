@@ -6,18 +6,102 @@ body {
 }
 
 .container{
+  height: 200vh;
+  width: 100%;
+  background-color: #f8f8f8;
+
+}
+.header{
   height: 100vh;
   width: 100%;
-  background-color: red;
-  position: relative;
   display: flex;
-  justify-content: space-between;
-  row-gap: 10px;
-  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+  flex-direction: column;
+}
+.header-title{
+  text-transform: uppercase;
+  color: brown;
+  line-height: 0px;
+  font-size: 3rem;
+
+}
+.header-title:nth-child(1){
+  padding-left: 200px;
+}
+.header-title:nth-child(2){
+  padding-left: 40px;
+}
+.header-title:nth-child(3){
+  padding-left: 300px;
+}
+.header-title:nth-child(4){
+  padding-left: 200px;
+}
+.animation-container{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.animation{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.animation:nth-child(1){
+  z-index: 10;
+}
+.animation:nth-child(2){
+  z-index: 8;
+}
+.animation:nth-child(3){
+  z-index: 6;
+}
+.animation:nth-child(4){
+  z-index: 4;
 }
 
-.box{
+.img-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.animation-property{
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  color: rgb(138, 25, 25);
+}
+.animation-title{
+  position: absolute;
+  top: 10%;
+  left: 8%;
+  font-size: 2rem;
+  color: black;
+}
+
+
+.gallery-container{
+  position: absolute;
+  top: 0;
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
+  right: 5%;
+  height: 100vh;
+  width: 250px;
   background-color: green;
-  height: 50px;
-  width: 50px;
+  overflow: hidden;
+}
+
+.gallery-img{
+  width: 100%;
+  height: 200px;
 }
