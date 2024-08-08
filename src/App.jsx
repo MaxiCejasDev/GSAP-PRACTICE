@@ -21,21 +21,52 @@ function App() {
       }
     })
     
- 
+    useEffect(()=>{
+      gsap.set(".gallery-container",{
+        yPercent: 100
+      })
+      const tl = gsap.timeline()
+      tl.to(".gallery-container",{
+        yPercent: -100,
+        duration: 1
+      })
+      tl.to(".animation:nth-child(1)",{
+        clipPath: "inset(0 0 100% 0)",
+        duration: 1
+      })
+      tl.to(".animation:nth-child(2)",{
+        clipPath: "inset(0 0 0 100%)",
+        duration: 1
+      })
+      tl.to(".animation:nth-child(3)",{
+        clipPath: "inset(0 100% 0 0)",
+        duration: 1
+      })
+
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: ".animation-container",
+        start: "top top",
+        end: "+=2000",
+        scrub: 3,
+        pin: true
+      })
+      
+    })
   
   return (  
     <div ref={lenisRef} className="container">
       <div className="header">
-          <h1 className="header-title">maximiliano cejas</h1>
-          <h2 className="header-title">frontend developer</h2>
+          <h1 className="header-title">Maximiliano cejas</h1>
+          <h2 className="header-title">Frontend developer</h2>
           <h2 className="header-title">&</h2>
-          <h2 className="header-title">ux/ui designer</h2>
+          <h2 className="header-title">UX/UI Designer</h2>
       </div>
       <div className="animation-container">
           <div className="animation">
             <img className="img-bg" src="/green.jpg" alt="Green landscape" />
             <p className="animation-property">(Property)</p>
-            <h3 className="animation-title">Green landscape</h3>
+            <h3 className="green-title">Green landscape</h3>
             <div className="gallery-container">
               <img src="/scroll-1.jpg" alt="" className="gallery-img" /><img src="/scroll-2.jpg" alt="" className="gallery-img" /><img src="/mountain-2.jpg" alt="" className="gallery-img" />
             </div>
@@ -43,7 +74,7 @@ function App() {
           <div className="animation">
             <img className="img-bg" src="/city.jpg" alt="City" />
             <p className="animation-property">(Property)</p>
-            <h3 className="animation-title">City</h3>
+            <h3 className="city-title">City</h3>
             <div className="gallery-container">
               <img src="/scroll-1.jpg" alt="" className="gallery-img" /><img src="/scroll-2.jpg" alt="" className="gallery-img" /><img src="/mountain-2.jpg" alt="" className="gallery-img" />
             </div>
@@ -51,7 +82,7 @@ function App() {
           <div className="animation">
             <img className="img-bg" src="/ocean.jpg" alt="Ocean" />
             <p className="animation-property">(Property)</p>
-            <h3 className="animation-title">Ocean</h3>
+            <h3 className="ocean-title">Ocean</h3>
             <div className="gallery-container">
               <img src="/scroll-1.jpg" alt="" className="gallery-img" /><img src="/scroll-2.jpg" alt="" className="gallery-img" /><img src="/mountain-2.jpg" alt="" className="gallery-img" />
             </div>
@@ -59,7 +90,7 @@ function App() {
           <div className="animation">
             <img className="img-bg" src="/mountain.jpg" alt="Mountain" />
             <p className="animation-property">(Property)</p>
-            <h3 className="animation-title">Mountain</h3>
+            <h3 className="mountain-title">Mountain</h3>
             <div className="gallery-container">
               <img src="/scroll-1.jpg" alt="" className="gallery-img" /><img src="/scroll-2.jpg" alt="" className="gallery-img" /><img src="/mountain-2.jpg" alt="" className="gallery-img" />
             </div>
